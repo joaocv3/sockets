@@ -6,11 +6,10 @@ class ClientSocket
   end
 
   def read
-     puts @server.gets # Print line from server socket
+    @server.gets # Print line from server socket
   end
 
-  def write
-    message = gets
+  def write(message)
     @server.print message
   end
 end
