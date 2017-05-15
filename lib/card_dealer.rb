@@ -1,6 +1,6 @@
 class CardDealer
   def initialize(players_number, players, cards)
-    @cards_each_player = 33/players_number.to_i
+    @cards_each_player = 33/players_number
     @players = players
     @cards = cards
   end

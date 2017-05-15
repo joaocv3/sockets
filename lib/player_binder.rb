@@ -3,7 +3,7 @@ require_relative 'player'
 class PlayerBinder
   def initialize(players_number, server)
     @server = server
-    @players_number = players_number.to_i
+    @players_number = players_number
   end
   
   def perform
