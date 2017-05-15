@@ -1,11 +1,17 @@
 require_relative 'server_socket'
 require_relative 'player_binder'
+require_relative 'card_generator'
+require_relative 'card_dealer'
 
 class GameController
-  server = ServerSocket.new 2000
+  attr_reader :server, :players
 
-  puts "How many players?"
-  players_number = gets
+  def initialize(port, players_number)
+    @server = ServerSocket.new port
 
-  players = PlayerBinder.new(players_number, server).perform
+    players = PlayerBinder.new(players_number, @server).perform
+    cards = CardGenerator.new.perform
+
+    @players = CardDealer.new(players_number, players, cards).deal
+  end
 end
