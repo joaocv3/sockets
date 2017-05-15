@@ -1,5 +1,4 @@
 require_relative 'card'
-require 'byebug'
 
 class CardGenerator
   # name, dribbling, shot_power, sprint_speed, passing, stamina
